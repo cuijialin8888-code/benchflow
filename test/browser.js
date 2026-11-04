@@ -145,6 +145,11 @@ try {
     }
     await page.locator('[data-view=runs]').click();
     await page.screenshot({ path: 'test-results/mobile.png', fullPage: true });
+    await page.addStyleTag({ content: ':root { font-family: Verdana, sans-serif !important; }' });
+    for (const view of ['overview', 'runs', 'analysis', 'notebook', 'settings']) {
+      await page.locator(`[data-view=${view}]`).click();
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `Fallback-font mobile overflow on ${view}`);
+    }
   });
   await step('cached app reloads offline and retains local data', async () => {
     await page.evaluate(async () => { await navigator.serviceWorker.ready; });
