@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183e35">
+  <meta name="description" content="A local-first experimental workspace. Organize runs, compare curves, and keep your research notes and data together.">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+  <title>BenchFlow · Experimental workspace</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="app"><main class="boot"><h1>BenchFlow</h1><p>Opening your local workspace…</p></main></div>
+  <dialog id="modal" aria-labelledby="dialog-title"></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <input id="backup-input" type="file" accept="application/json,.json" hidden>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
